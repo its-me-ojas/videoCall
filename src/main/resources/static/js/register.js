@@ -13,7 +13,7 @@ function handleRegistration(event) {
         status: status
     }
 
-    fetch('http://localhost:8080/api/users', {
+    fetch('http://videocall.crestfallen.tech/api/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
