@@ -12,7 +12,7 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"http://localhost:8081", "http://videocall.crestfallen.tech"})
+@CrossOrigin(origins = {"http://localhost:8080", "http://videocall.crestfallen.tech"})
 @Slf4j
 public class UserController {
     private final UserService userService;
