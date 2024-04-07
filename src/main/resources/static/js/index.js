@@ -15,6 +15,13 @@ function displayUsers(userList, userListElement) {
 }
 
 function loadAndDisplayUsers() {
+    // check if the user is connected or not
+    const connectedUser = localStorage.getItem('connectedUser');
+    if (!connectedUser) {
+        window.location.href = 'login.html'
+        return
+    }
+
     const userListElement = document.getElementById('userList');
 
     userListElement.innerHTML = 'Loading...';
