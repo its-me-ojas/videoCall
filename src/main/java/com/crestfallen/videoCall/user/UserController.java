@@ -28,11 +28,11 @@ public class UserController {
     }
 
     @PostMapping("/logout")
-    public void logout(@RequestBody String email) {
-        userService.logout(email);
+    public void logout(@RequestBody User user) {
+        userService.logout(user);
     }
 
-    @GetMapping
+    @GetMapping()
     public List<User> findAll() {
         return userService.findAll();
     }

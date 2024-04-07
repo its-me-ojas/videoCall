@@ -28,9 +28,9 @@ public class UserService {
         return cUser;
     }
 
-    public void logout(String email){
+    public void logout(User user){
         var userIndex= IntStream.range(0,USERS_LIST.size())
-                .filter(i-> USERS_LIST.get(i).getEmail().equals(email))
+                .filter(i-> USERS_LIST.get(i).getEmail().equals(user.getEmail()))
                 .findAny()
                 .orElseThrow(() -> new RuntimeException("User not found"));
         USERS_LIST.get(userIndex).setStatus("offline");

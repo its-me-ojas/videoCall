@@ -30,3 +30,24 @@ function loadAndDisplayUsers() {
 }
 
 window.addEventListener('load', loadAndDisplayUsers)
+
+
+function handlerLogout() {
+    fetch('http://localhost:8080/api/users/logout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: localStorage.getItem('connectedUser')
+    })
+        .then(res => {
+            return res
+        })
+        .then(data => {
+            localStorage.removeItem('connectedUser')
+            window.location.href = 'login.html'
+        })
+}
+
+const logoutBtn = document.getElementById('logoutBtn')
+logoutBtn.addEventListener('click', handlerLogout)

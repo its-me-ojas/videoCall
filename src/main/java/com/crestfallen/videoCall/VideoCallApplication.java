@@ -22,17 +22,17 @@ public class VideoCallApplication {
             userService.register(User.builder()
                     .username("user1")
                     .email("user1@mail.com")
-                    .password("password")
+                    .password("pass")
                     .build());
             userService.register(User.builder()
                     .username("user2")
                     .email("user2@mail.com")
-                    .password("password")
+                    .password("pass")
                     .build());
             userService.register(User.builder()
                     .username("user3")
                     .email("user3@mail.com")
-                    .password("password")
+                    .password("pass")
                     .build());
         };
     }
