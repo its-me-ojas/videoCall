@@ -3,10 +3,7 @@ package com.crestfallen.videoCall.user;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,18 +17,22 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 public class UserController {
     private final UserService userService;
 
+    @PostMapping
     public void register(User user) {
         userService.register(user);
     }
 
+    @PostMapping("/login")
     public User login(User user) {
         return userService.login(user);
     }
 
+    @PostMapping("/logout")
     public void logout(String email) {
         userService.logout(email);
     }
 
+    @GetMapping
     public List<User> findAll() {
         return userService.findAll();
     }
