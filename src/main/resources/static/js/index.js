@@ -58,3 +58,24 @@ function handlerLogout() {
 
 const logoutBtn = document.getElementById('logoutBtn')
 logoutBtn.addEventListener('click', handlerLogout)
+
+function handleNewMeeting() {
+    const connectedUser = JSON.parse(localStorage.getItem('connectedUser'))
+    window.open(`videoCall.html?username=${connectedUser.username}`, '_blank')
+}
+
+const newMeetingBtn = document.getElementById('newMeetingBtn')
+newMeetingBtn.addEventListener('click', handleNewMeeting)
+
+const joinMeetingBtn = document.getElementById('joinMeetingBtn')
+
+function handleJoinMeeting() {
+    const roomId = document.getElementById('meetingName').value
+    const connectedUser = JSON.parse(localStorage.getItem('connectedUser'))
+
+    const url = 'videoCall.html?username=' + connectedUser.username + '&roomId=' + roomId
+
+    window.open(url, '_blank')
+}
+
+joinMeetingBtn.addEventListener('click', handleJoinMeeting)
