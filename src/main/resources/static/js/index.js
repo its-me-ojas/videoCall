@@ -73,7 +73,7 @@ function handleJoinMeeting() {
     const roomId = document.getElementById('meetingName').value
     const connectedUser = JSON.parse(localStorage.getItem('connectedUser'))
 
-    const url = 'videoCall.html?username=' + connectedUser.username + '&roomId=' + roomId
+    const url = `videoCall.html?roomID=${roomId}&username=${connectedUser.username}`;
 
     window.open(url, '_blank')
 }
