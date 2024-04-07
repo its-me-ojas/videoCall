@@ -11,7 +11,7 @@ function handleLogin(event) {
         password: password
     }
 
-    fetch('http://videocall.crestfallen.tech/api/users/login', {
+    fetch('http://localhost:8081/api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

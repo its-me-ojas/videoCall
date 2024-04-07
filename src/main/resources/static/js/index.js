@@ -26,7 +26,7 @@ function loadAndDisplayUsers() {
 
     userListElement.innerHTML = 'Loading...';
 
-    fetch('http://videocall.crestfallen.tech/api/users')
+    fetch('http://localhost:8081/api/users')
         .then(res => {
             return res.json()
         })
@@ -40,7 +40,7 @@ window.addEventListener('load', loadAndDisplayUsers)
 
 
 function handlerLogout() {
-    fetch('http://videocall.crestfallen.tech/api/users/logout', {
+    fetch('http://localhost:8081/api/users/logout', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
