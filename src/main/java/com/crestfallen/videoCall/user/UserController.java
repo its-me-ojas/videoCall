@@ -12,7 +12,7 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
-@CrossOrigin(origins ="*")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 @Slf4j
 public class UserController {
     private final UserService userService;
